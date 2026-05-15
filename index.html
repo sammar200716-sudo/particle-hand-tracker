@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi Hand Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import map for dependencies -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/+esm"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="ui-layer">
+        <div class="header">
+            <h1>NEURAL INTERFACE <span>v1.0</span></h1>
+            <div class="status-indicator">
+                <div class="dot"></div>
+                <span id="status-text">SYSTEM STANDBY</span>
+            </div>
+        </div>
+        
+        <div class="diagnostics">
+            <div class="metric">
+                <span class="label">PARTICLES</span>
+                <span class="value">10,000</span>
+            </div>
+            <div class="metric">
+                <span class="label">HAND STATE</span>
+                <span class="value" id="hand-state">SCANNING</span>
+            </div>
+        </div>
+        <div class="vignette"></div>
+    </div>
+    
+    <div id="canvas-container"></div>
+    
+    <video id="webcam" autoplay playsinline></video>
+    
+    <script type="module" src="main.js"></script>
+</body>
+</html>
